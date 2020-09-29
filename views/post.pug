@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1(class='title')= post.title
+  each section in post.sections
+    if section.sys.contentType.sys.id === 'sectionIntro'
+      - const intro = section.fields;
+      include sectionIntro
+    else if section.sys.contentType.sys.id === 'sectionArticle'
+      - const article = section.fields;
+      include sectionArticle
+    else 
+      - const author = section.fields;
+      include sectionAuthor

@@ -1,0 +1,7 @@
+div(class = {'author__container': true, 'author__container--reversed': author.isReversed})
+  div(class = {'author__container--text': true, 'author__container--text-reversed': author.isReversed})
+    h1(class = 'author__title')= author.name
+    p(class = 'author__description')!= md.render(author.description)
+
+  img(class = 'author__image', src = author.image.fields.file.url)
+  

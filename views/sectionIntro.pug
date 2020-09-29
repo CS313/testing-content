@@ -1,0 +1,9 @@
+div(class = {'intro__container': true, 'intro__container--reversed': intro.isReversed})
+  div(class = 'intro__main')
+    h1(class = 'intro__title')= intro.title
+    p(class = 'intro__text')!= md.render(intro.text)
+  
+  div(class = 'intro__image-container')
+    img(class = 'intro__image', src = intro.image.fields.file.url)
+
+
